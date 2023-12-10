@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Rust",
+            "type": "lldb",
+            "request": "launch",
+            "program": "/vscode/vscode-server/bin/linux-x64/af28b32d7e553898b2a91af498b1fb666fdebe0c/bin/remote-cli",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "sourceMap": {
+                "/rustc/": "${workspaceFolder}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/",
+                "/core/": "${workspaceFolder}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/"
+            },
+            "preLaunchTask": "cargo build",
+            "postDebugTask": "cargo build",
+            "cargo": {
+                "args": ["build"],
+                "filter": {
+                    "name": "remote-cli"
+                }
+            }
+        }
+    ]
+}

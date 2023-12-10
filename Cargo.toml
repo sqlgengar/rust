@@ -1,0 +1,35 @@
+[package]
+name = "mi_proyecto"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[dependencies]
+rand = "0.8.5"
+
+[build]
+# Puedes especificar el target aquí
+target = "x86_64-unknown-linux-gnu"
+
+[build-dependencies]
+# Aquí puedes especificar dependencias utilizadas solo durante la compilación
+# Ejemplo:
+# serde = { version = "1", features = ["derive"] }
+
+[features]
+# Puedes definir características opcionales aquí
+# Ejemplo:
+# logger = ["log", "env_logger"]
+
+[profile.dev]
+# Configuración específica para la compilación en desarrollo
+opt-level = 0
+debug = true
+
+[profile.release]
+# Configuración específica para la compilación de lanzamiento
+opt-level = 3
+debug = false
